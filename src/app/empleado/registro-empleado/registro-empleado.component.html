@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center" id="form-title">{{ titulo }}</h2>
+            <form [formGroup]="formEmpleado" (ngSubmit)="agregarOEditar()">
+                <div class="form-group">
+                    <label for="employeeName">Nombre del Empleado</label>
+                    <input type="text" class="form-control" id="employeeName" formControlName="nombre_empleado" (input)="onInput($event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeRole">Rol del Empleado</label>
+                    <input type="text" class="form-control" id="employeeRole" formControlName="rol_empleado" (input)="onInputRol($event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeePhone">Teléfono del Empleado</label>
+                    <input type="text" class="form-control" id="employeePhone" formControlName="telefono_empleado" (input)="onTelefonoInput($event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeEmail">Correo del Empleado</label>
+                    <input type="email" class="form-control" id="employeeEmail" formControlName="correo_empleado" required>
+                </div>
+                <button type="button" class="btn btn-danger" routerLink='/empleado/lista-empleado'>Cancelar</button>
+                <button type="submit" class="btn btn-success" [disabled]="formEmpleado.invalid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

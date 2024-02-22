@@ -1,0 +1,39 @@
+<app-sidebar></app-sidebar>
+<section class="ochenta">
+    <div class="container mt-4">
+        <div class="mx-3">
+            <span class="h1">
+                Servicios
+            </span>
+            <div class="card-body mt-4">
+                <span class="h3">
+                    Gestionar
+                </span>
+                <button class="btn btn-dark btn-lg float-end" routerLink='/servicio/registro-servicio'>Agregar servicio</button>
+                <table class="table table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre de Servicio</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let servicio of servicios">
+                            <td>{{ servicio.id }}</td>
+                            <td>{{ servicio.nombre_servicio }}</td>
+                            <td>{{ servicio.precio }}</td>
+                            <td>{{ servicio.descricion }}</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarServicio(servicio.id)"></i>
+                                <i (click)="eliminar(servicio)" class="fa-solid fa-trash" style="color: #c00c0c; cursor: pointer;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

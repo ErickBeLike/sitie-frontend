@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center" id="form-title">{{ titulo }}</h2>
+            <form [formGroup]="formInstalacion" (ngSubmit)="agregarOEditar()">
+                <div class="form-group">
+                    <label for="venta">Venta</label>
+                    <!-- Asegúrate de tener el formControlName correspondiente -->
+                    <select class="form-control" id="venta" formControlName="id_venta" required>
+                        <option *ngFor="let venta of ventas" [value]="venta.id">{{ venta.id }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="responsable">Responsable</label>
+                    <!-- Asegúrate de tener el formControlName correspondiente -->
+                    <select class="form-control" id="responsable" formControlName="id_responsable" required>
+                        <option *ngFor="let empleado of empleados" [value]="empleado.id">{{ empleado.id }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInstalacion">Fecha de Instalación</label>
+                    <!-- Asegúrate de tener el formControlName correspondiente -->
+                    <input type="text" class="form-control" id="fechaInstalacion" formControlName="fecha_instalacion" required>
+                </div>
+                <button type="button" class="btn btn-danger" routerLink='/instalacion/lista-instalacion'>Cancelar</button>
+                <button type="submit" class="btn btn-success" [disabled]="formInstalacion.invalid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

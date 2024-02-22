@@ -1,0 +1,45 @@
+<app-sidebar></app-sidebar>
+
+<section class="ochenta">
+    <div class="container mt-4">
+        <div class="mx-3">
+            <span class="h1">
+                Ventas
+            </span>
+            <div class="card-body mt-4">
+                <span class="h3">
+                    Gestionar
+                </span>
+                <!-- Puedes ajustar la ruta según tu estructura de navegación -->
+                <button class="btn btn-dark btn-lg float-end" routerLink='/venta/registro-venta'>Agregar venta</button>
+                <table class="table table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Responsable</th>
+                            <th>Fecha de Venta</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let venta of ventas">
+                            <td>{{ venta.id }}</td>
+                            <td>{{ venta.id_cliente.id }}</td>
+                            <td>{{ venta.id_servicio.id }}</td>
+                            <td>{{ venta.id_responsable.id }}</td>
+                            <td>{{ venta.fecha_venta | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                            <td>{{ venta.precio }}</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarVenta(venta.id)"></i>
+                                <i (click)="eliminarVenta(venta)" class="fa-solid fa-trash" style="color: #c00c0c; cursor: pointer;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

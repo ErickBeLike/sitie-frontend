@@ -1,0 +1,41 @@
+<app-sidebar></app-sidebar>
+
+<section class="ochenta">
+    <div class="container mt-4">
+        <div class="mx-3">
+            <span class="h1">
+                Instalaciones
+            </span>
+            <div class="card-body mt-4">
+                <span class="h3">
+                    Gestionar
+                </span>
+                <!-- Puedes ajustar la ruta según tu estructura de navegación -->
+                <button class="btn btn-dark btn-lg float-end" routerLink='/instalacion/registro-instalacion'>Agregar instalación</button>
+                <table class="table table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Venta</th>
+                            <th>Responsable</th>
+                            <th>Fecha de Instalación</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let instalacion of instalaciones">
+                            <td>{{ instalacion.id }}</td>
+                            <td>{{ instalacion.id_venta.id }}</td>
+                            <td>{{ instalacion.id_responsable.id }}</td>
+                            <td>{{ instalacion.fecha_instalacion }}</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarInstalacion(instalacion.id)"></i>
+                                <i (click)="eliminarInstalacion(instalacion)" class="fa-solid fa-trash" style="color: #c00c0c; cursor: pointer;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

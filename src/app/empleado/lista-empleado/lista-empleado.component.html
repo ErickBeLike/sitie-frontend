@@ -1,0 +1,41 @@
+<app-sidebar></app-sidebar>
+<section class="ochenta">
+    <div class="container mt-4">
+        <div class="mx-3">
+            <span class="h1">
+                Empleados
+            </span>
+            <div class="card-body mt-4">
+                <span class="h3">
+                    Gestionar
+                </span>
+                <button class="btn btn-dark btn-lg float-end" routerLink='/empleado/registro-empleado'>Agregar empleado</button>
+                <table class="table table-hover mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre de Empleado</th>
+                            <th>Rol</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empleado of empleados">
+                            <td>{{ empleado.id }}</td>
+                            <td>{{ empleado.nombre_empleado }}</td>
+                            <td>{{ empleado.rol_empleado }}</td>
+                            <td> {{empleado.telefono_empleado}} </td>
+                            <td> {{empleado.correo_empleado}} </td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarEmpleado(empleado.id)"></i>
+                                <i (click)="eliminar(empleado)" class="fa-solid fa-trash" style="color: #c00c0c; cursor: pointer;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>    
+</section>

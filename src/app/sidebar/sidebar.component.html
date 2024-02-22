@@ -1,0 +1,63 @@
+<nav class="sidebar">
+    <div class="sidebar-header">
+      <h2>SITIE</h2>
+      <h2>DASHBOARD</h2>
+      <p>Panel Administrativo</p>
+    </div>
+    <div class="d-grid">
+      <button type="submit" class="mb-3 btn btn-outline-light" (click)="logout()">Volver</button>
+    </div>
+    <ul class="sidebar-menu">
+
+      <!-- Clientes -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/cliente/lista-cliente"><i class="bi bi-person"></i> Clientes</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      <!-- Empleados -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/empleado/lista-empleado"><i class="bi bi-person"></i> Empleados</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      <!-- Usuarios -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/usuario/lista-usuario"><i class="bi bi-person"></i> Usuarios</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      <!-- Servicios -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/servicio/lista-servicio"><i class="bi bi-person"></i> Servicios</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      <!-- Ventas -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/venta/lista-venta"><i class="bi bi-person"></i> Ventas</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      <!-- Instalaciones -->
+      <li class="menu-item">
+        <div class="menu-title">
+          <a routerLink="/instalacion/lista-instalacion"><i class="bi bi-person"></i> Instalaciones</a>
+          <span class="toggle-icon"></span>
+        </div>
+      </li>
+
+      
+    </ul>
+  </nav>
+  

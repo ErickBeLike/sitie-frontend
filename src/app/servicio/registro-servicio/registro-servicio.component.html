@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center" id="form-title">{{ titulo }}</h2>
+            <form [formGroup]="formServicio" (ngSubmit)="agregarOEditar()">
+                <div class="form-group">
+                    <label for="serviceName">Nombre del Servicio</label>
+                    <input type="text" class="form-control" id="serviceName" formControlName="nombre_servicio" (input)="onInput($event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicePrice">Precio</label>
+                    <input type="number" class="form-control" id="servicePrice" formControlName="precio_servicio" required>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="serviceDescription">Descripción</label>
+                    <textarea class="form-control" id="serviceDescription" formControlName="descricion" rows="4" required></textarea>
+                </div>
+                <button type="button" class="btn btn-danger" routerLink='/servicio/lista-servicio'>Cancelar</button>
+                <button type="submit" class="btn btn-success" [disabled]="formServicio.invalid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
