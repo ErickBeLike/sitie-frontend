@@ -34,20 +34,18 @@ export class RegistroInstalacionComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.esEditar(); // Mover la carga de datos aquí para asegurarse de que se ejecute primero
-        this.cargarDatosIniciales(); // Cargar datos iniciales en todos los casos
+        this.esEditar();
+        this.cargarDatosIniciales(); 
     }
 
     cargarDatosIniciales() {
-        // Obtener la lista de ventas
         this.instalacionService.obtenerVentas().subscribe(ventas => this.ventas = ventas || []);
         
-        // Obtener la lista de empleados
         this.instalacionService.obtenerEmpleados().subscribe(empleados => this.empleados = empleados || []);
     }
 
     esEditar() {
-        this.id = this.route.snapshot.paramMap.get('id');  // Vuelve a obtener el ID para asegurarte de tener el valor actualizado
+        this.id = this.route.snapshot.paramMap.get('id'); 
         if (this.id !== null) {
             this.titulo = 'Editar instalación';
             this.instalacionService.buscarInstalacionPorId(this.id).subscribe(response => {

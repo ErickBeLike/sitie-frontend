@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServicioService } from '../../servicios/servicio/servicio.service';  // Asegúrate de tener el servicio correcto
+import { ServicioService } from '../../servicios/servicio/servicio.service'; 
 
 @Component({
   selector: 'app-lista-servicio',

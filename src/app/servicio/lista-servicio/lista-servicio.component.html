@@ -24,7 +24,7 @@
                         <tr *ngFor="let servicio of servicios">
                             <td>{{ servicio.id }}</td>
                             <td>{{ servicio.nombre_servicio }}</td>
-                            <td>{{ servicio.precio }}</td>
+                            <td>{{ servicio.precio_servicio }}</td>
                             <td>{{ servicio.descricion }}</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarServicio(servicio.id)"></i>

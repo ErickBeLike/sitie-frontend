@@ -23,7 +23,7 @@ export class RegistroServicioComponent implements OnInit {
     ) {
         this.formServicio = this.fb.group({
             nombre_servicio: ['', [Validators.required]],
-            precio_servicio: [0, [Validators.required]],
+            precio_servicio: [null, [Validators.required]],
             descricion: ['', [Validators.required]]
         });
 
@@ -44,6 +44,7 @@ export class RegistroServicioComponent implements OnInit {
     }
 
     agregarOEditar(): void {
+        
         if (this.id === null) {
             this.agregar();
         } else {

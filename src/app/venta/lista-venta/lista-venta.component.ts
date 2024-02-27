@@ -1,42 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { VentaService } from '../../servicios/venta/venta.service'; // Asegúrate de importar el servicio correcto
+import { VentaService } from '../../servicios/venta/venta.service'; 
 
 @Component({
-  selector: 'app-lista-venta', // Cambiado el nombre del selector
-  templateUrl: './lista-venta.component.html', // Cambiado el nombre del archivo HTML
-  styleUrls: ['./lista-venta.component.css'] // Cambiado el nombre del archivo de estilos
+  selector: 'app-lista-venta',
+  templateUrl: './lista-venta.component.html', 
+  styleUrls: ['./lista-venta.component.css'] 
 })
 export class ListaVentaComponent implements OnInit {
 
-  ventas: any[] = []; // Cambiado el nombre de la propiedad
+  ventas: any[] = []; 
 
-  constructor(private ventaService: VentaService, private router: Router) {} // Cambiado el nombre del servicio
+  constructor(private ventaService: VentaService, private router: Router) {} 
 
   ngOnInit(): void {
-    this.obtenerTodasLasVentas(); // Cambiado el nombre del método
+    this.obtenerTodasLasVentas(); 
   }
 
-  obtenerTodasLasVentas() { // Cambiado el nombre del método
-    this.ventaService.obtenerTodasLasVentas().subscribe(response => { // Cambiado el nombre del método en el servicio
+  obtenerTodasLasVentas() { 
+    this.ventaService.obtenerTodasLasVentas().subscribe(response => { 
       this.ventas = response;
     }, error => {
       console.error(error);
     });
   }
 
-  eliminarVenta(venta: any) { // Cambiado el nombre del método y el parámetro
-    const confirmar = confirm(`¿Estás seguro de eliminar la venta con ID ${venta.id}?`); // Cambiado el nombre de las propiedades
+  eliminarVenta(venta: any) { 
+    const confirmar = confirm(`¿Estás seguro de eliminar la venta con ID ${venta.id}?`); 
     if (confirmar) {
-      this.ventaService.eliminarVenta(venta.id).subscribe(response => { // Cambiado el nombre del método en el servicio
-        this.obtenerTodasLasVentas(); // Cambiado el nombre del método
+      this.ventaService.eliminarVenta(venta.id).subscribe(response => { 
+        this.obtenerTodasLasVentas(); 
       }, error => {
         console.error(error);
       });
     }
   }
 
-  editarVenta(id: any): void { // Cambiado el nombre del método y el parámetro
-    this.router.navigate(['/venta/registro-venta', id]); // Cambiado el nombre de la ruta
+  editarVenta(id: any): void { 
+    this.router.navigate(['/venta/registro-venta', id]); 
   }
 }

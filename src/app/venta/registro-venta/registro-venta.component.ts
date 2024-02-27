@@ -35,8 +35,8 @@ export class RegistroVentaComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.esEditar(); // Mover la carga de datos aquí para asegurarse de que se ejecute primero
-        this.cargarDatosIniciales(); // Cargar datos iniciales en todos los casos
+        this.esEditar();
+        this.cargarDatosIniciales(); 
     }
 
     cargarDatosIniciales() {

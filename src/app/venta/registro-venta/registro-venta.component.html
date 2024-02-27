@@ -5,23 +5,20 @@
             <form [formGroup]="formVenta" (ngSubmit)="agregarOEditar()">
                 <div class="form-group">
                     <label for="client">Cliente</label>
-                    <!-- Asegúrate de tener el formControlName correspondiente -->
                     <select class="form-control" id="client" formControlName="id_cliente" required>
-                        <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.id }}</option>
+                        <option *ngFor="let cliente of clientes" [value]="cliente.id">[{{ cliente.id }} {{ cliente.nombre_cliente }} ]</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="service">Servicio</label>
-                    <!-- Asegúrate de tener el formControlName correspondiente -->
                     <select class="form-control" id="service" formControlName="id_servicio" required>
-                        <option *ngFor="let servicio of servicios" [value]="servicio.id">{{ servicio.id }}</option>
+                        <option *ngFor="let servicio of servicios" [value]="servicio.id">[ {{ servicio.id }} {{servicio.nombre_servicio }} ]</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="employee">Responsable</label>
-                    <!-- Asegúrate de tener el formControlName correspondiente -->
                     <select class="form-control" id="employee" formControlName="id_responsable" required>
-                        <option *ngFor="let empleado of empleados" [value]="empleado.id">{{ empleado.id }}</option>
+                        <option *ngFor="let empleado of empleados" [value]="empleado.id">[{{ empleado.id }} {{ empleado.nombre_empleado }} ]</option>
                     </select>
                 </div>
                 <button type="button" class="btn btn-danger" routerLink='/venta/lista-venta'>Cancelar</button>

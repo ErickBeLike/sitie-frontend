@@ -20,8 +20,10 @@ export class ServicioService {
   }
 
   agregarServicio(servicio: any): Observable<any> {
+    console.log('Valor del precio en el servicio:', servicio.precio_servicio);
     return this.http.post<any>(this.apiUrl, servicio);
-  }
+}
+
 
   actualizarServicio(id: number, servicio: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${id}`, servicio);

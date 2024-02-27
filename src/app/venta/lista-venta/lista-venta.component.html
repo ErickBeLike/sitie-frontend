@@ -29,9 +29,9 @@
                             <td>{{ venta.id }}</td>
                             <td>{{ venta.id_cliente.id }}</td>
                             <td>{{ venta.id_servicio.id }}</td>
-                            <td>{{ venta.id_responsable.id }}</td>
+                            <td>{{ venta.id_empleado.id }}</td>
                             <td>{{ venta.fecha_venta | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
-                            <td>{{ venta.precio }}</td>
+                            <td>{{ venta.precio_servicio }}</td>
                             <td>
                                 <i class="fa-solid fa-pen-to-square me-3" style="color: #25a701; cursor: pointer;" (click)="editarVenta(venta.id)"></i>
                                 <i (click)="eliminarVenta(venta)" class="fa-solid fa-trash" style="color: #c00c0c; cursor: pointer;"></i>
